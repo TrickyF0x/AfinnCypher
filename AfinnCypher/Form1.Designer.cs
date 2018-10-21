@@ -83,6 +83,7 @@
             this.textBox_a.Name = "textBox_a";
             this.textBox_a.Size = new System.Drawing.Size(100, 22);
             this.textBox_a.TabIndex = 4;
+            this.textBox_a.Text = "1";
             this.textBox_a.TextChanged += new System.EventHandler(this.textBox_a_TextChanged);
             // 
             // textBox_b
@@ -91,6 +92,7 @@
             this.textBox_b.Name = "textBox_b";
             this.textBox_b.Size = new System.Drawing.Size(100, 22);
             this.textBox_b.TabIndex = 5;
+            this.textBox_b.Text = "0";
             this.textBox_b.TextChanged += new System.EventHandler(this.textBox_b_TextChanged);
             // 
             // label1
