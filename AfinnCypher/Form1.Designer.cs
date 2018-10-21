@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.in_richTextBox = new System.Windows.Forms.RichTextBox();
             this.encrypt_button = new System.Windows.Forms.Button();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.out_richTextBox = new System.Windows.Forms.RichTextBox();
             this.decrypt_button = new System.Windows.Forms.Button();
             this.textBox_a = new System.Windows.Forms.TextBox();
             this.textBox_b = new System.Windows.Forms.TextBox();
@@ -41,13 +41,13 @@
             this.clear_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // in_richTextBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 116);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(436, 225);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.in_richTextBox.Location = new System.Drawing.Point(12, 116);
+            this.in_richTextBox.Name = "in_richTextBox";
+            this.in_richTextBox.Size = new System.Drawing.Size(436, 225);
+            this.in_richTextBox.TabIndex = 0;
+            this.in_richTextBox.Text = "";
             // 
             // encrypt_button
             // 
@@ -57,14 +57,16 @@
             this.encrypt_button.TabIndex = 1;
             this.encrypt_button.Text = "Зашифровать";
             this.encrypt_button.UseVisualStyleBackColor = true;
+            this.encrypt_button.Click += new System.EventHandler(this.encrypt_button_Click);
             // 
-            // richTextBox2
+            // out_richTextBox
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(580, 116);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(436, 225);
-            this.richTextBox2.TabIndex = 2;
-            this.richTextBox2.Text = "";
+            this.out_richTextBox.Location = new System.Drawing.Point(580, 116);
+            this.out_richTextBox.Name = "out_richTextBox";
+            this.out_richTextBox.ReadOnly = true;
+            this.out_richTextBox.Size = new System.Drawing.Size(436, 225);
+            this.out_richTextBox.TabIndex = 2;
+            this.out_richTextBox.Text = "";
             // 
             // decrypt_button
             // 
@@ -81,6 +83,7 @@
             this.textBox_a.Name = "textBox_a";
             this.textBox_a.Size = new System.Drawing.Size(100, 22);
             this.textBox_a.TabIndex = 4;
+            this.textBox_a.TextChanged += new System.EventHandler(this.textBox_a_TextChanged);
             // 
             // textBox_b
             // 
@@ -88,6 +91,7 @@
             this.textBox_b.Name = "textBox_b";
             this.textBox_b.Size = new System.Drawing.Size(100, 22);
             this.textBox_b.TabIndex = 5;
+            this.textBox_b.TextChanged += new System.EventHandler(this.textBox_b_TextChanged);
             // 
             // label1
             // 
@@ -112,18 +116,18 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(24, 96);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 17);
+            this.label3.Size = new System.Drawing.Size(40, 17);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Текст";
+            this.label3.Text = "Ввод";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(593, 96);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 17);
+            this.label4.Size = new System.Drawing.Size(50, 17);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Шифр-текст";
+            this.label4.Text = "Вывод";
             // 
             // clear_button
             // 
@@ -149,9 +153,9 @@
             this.Controls.Add(this.textBox_b);
             this.Controls.Add(this.textBox_a);
             this.Controls.Add(this.decrypt_button);
-            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.out_richTextBox);
             this.Controls.Add(this.encrypt_button);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.in_richTextBox);
             this.Name = "MainForm";
             this.Text = "Афинный шифр";
             this.ResumeLayout(false);
@@ -161,9 +165,9 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox in_richTextBox;
         private System.Windows.Forms.Button encrypt_button;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox out_richTextBox;
         private System.Windows.Forms.Button decrypt_button;
         private System.Windows.Forms.TextBox textBox_a;
         private System.Windows.Forms.TextBox textBox_b;
