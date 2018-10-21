@@ -16,5 +16,10 @@ namespace AfinnCypher
         {
             InitializeComponent();
         }
+
+        private void clear_button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
