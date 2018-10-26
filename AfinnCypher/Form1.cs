@@ -48,39 +48,70 @@ namespace AfinnCypher
 
         private void encrypt_button_Click(object sender, EventArgs e)
         {
-            List<char> charlist = new List<char>();
-            List<int> cryptlist = new List<int>();
+            out_richTextBox.Clear();
+
+            language text = new language();
+
+            text.txt = in_richTextBox.Text;
 
             out_richTextBox.Clear();
 
-            int j = 0;
-            for (char i = 'A'; i <= 'Z'; ++i)
+            text.crypt(comboBox1.SelectedItem.ToString());
+
+            /* if (comboBox1.SelectedItem.ToString() == "English")
+             {
+                 text.english();
+             }
+             else if (comboBox1.SelectedItem.ToString() == "Русский")
+             {
+                 text.russian();
+             }
+             else
+             {
+                 text.own();
+             }*/
+        }
+    
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem.ToString() == "Свой")
+                textBox1.Enabled = true;
+            else
             {
-                charlist.Add(i);
-           //     out_richTextBox.AppendText(charlist[j].ToString());
-           //     ++j;
+                textBox1.Enabled = false;
+                textBox1.Clear();
             }
-
-            for (int i = 0; i <= 25; ++i)
-            {
-                cryptlist.Add((Int32.Parse(textBox_a.Text) * i + Int32.Parse(textBox_b.Text)) % 26);
-               // out_richTextBox.AppendText(cryptlist[j].ToString() + ' ');
-               // ++j; 65-90
-            }
-
-            Queue<char> text = new Queue<char>();
-
-            for(int i = 0; i < in_richTextBox.TextLength; ++i)
-                text.Enqueue(in_richTextBox.Text[i]);
-
-            char symbol;
-            while(text.Count != 0)
-            {
-                //out_richTextBox.AppendText(text.Dequeue().ToString());
-                symbol = text.Dequeue();
-                
-            }
-
         }
     }
+
+    class language
+    {
+        public string txt;
+        public void crypt(string type)
+        {
+            
+            List<char> charlist = new List<char>();
+            Queue<char> text = new Queue<char>();
+
+            for (int i = 0; i < MainForm.in_richTextBox.TextLength; ++i)
+                text.Enqueue(MainForm.in_richTextBox.Text[i]);
+
+
+
+            string value;
+            if (type == "English")
+            {
+
+            }
+            else if (type == "Русский")
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+    }
+
 }

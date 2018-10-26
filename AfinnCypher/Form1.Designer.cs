@@ -39,11 +39,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.clear_button = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // in_richTextBox
             // 
-            this.in_richTextBox.Location = new System.Drawing.Point(12, 116);
+            this.in_richTextBox.Location = new System.Drawing.Point(10, 155);
             this.in_richTextBox.Name = "in_richTextBox";
             this.in_richTextBox.Size = new System.Drawing.Size(436, 225);
             this.in_richTextBox.TabIndex = 0;
@@ -51,7 +55,7 @@
             // 
             // encrypt_button
             // 
-            this.encrypt_button.Location = new System.Drawing.Point(454, 116);
+            this.encrypt_button.Location = new System.Drawing.Point(452, 155);
             this.encrypt_button.Name = "encrypt_button";
             this.encrypt_button.Size = new System.Drawing.Size(120, 29);
             this.encrypt_button.TabIndex = 1;
@@ -61,7 +65,7 @@
             // 
             // out_richTextBox
             // 
-            this.out_richTextBox.Location = new System.Drawing.Point(580, 116);
+            this.out_richTextBox.Location = new System.Drawing.Point(578, 155);
             this.out_richTextBox.Name = "out_richTextBox";
             this.out_richTextBox.ReadOnly = true;
             this.out_richTextBox.Size = new System.Drawing.Size(436, 225);
@@ -70,7 +74,7 @@
             // 
             // decrypt_button
             // 
-            this.decrypt_button.Location = new System.Drawing.Point(454, 160);
+            this.decrypt_button.Location = new System.Drawing.Point(452, 199);
             this.decrypt_button.Name = "decrypt_button";
             this.decrypt_button.Size = new System.Drawing.Size(120, 29);
             this.decrypt_button.TabIndex = 3;
@@ -116,7 +120,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 96);
+            this.label3.Location = new System.Drawing.Point(22, 135);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 17);
             this.label3.TabIndex = 8;
@@ -125,7 +129,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(593, 96);
+            this.label4.Location = new System.Drawing.Point(591, 135);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 17);
             this.label4.TabIndex = 9;
@@ -133,7 +137,7 @@
             // 
             // clear_button
             // 
-            this.clear_button.Location = new System.Drawing.Point(454, 301);
+            this.clear_button.Location = new System.Drawing.Point(452, 340);
             this.clear_button.Name = "clear_button";
             this.clear_button.Size = new System.Drawing.Size(120, 41);
             this.clear_button.TabIndex = 10;
@@ -141,12 +145,46 @@
             this.clear_button.UseVisualStyleBackColor = true;
             this.clear_button.Click += new System.EventHandler(this.clear_button_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Location = new System.Drawing.Point(580, 14);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(436, 107);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Алфавит";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(6, 58);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(424, 22);
+            this.textBox1.TabIndex = 1;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "English",
+            "Русский",
+            "Свой"});
+            this.comboBox1.Location = new System.Drawing.Point(6, 21);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 0;
+            this.comboBox1.Text = "English";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AfinnCypher.Properties.Resources.afiny;
-            this.ClientSize = new System.Drawing.Size(1033, 354);
+            this.ClientSize = new System.Drawing.Size(1033, 387);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.clear_button);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -160,14 +198,14 @@
             this.Controls.Add(this.in_richTextBox);
             this.Name = "MainForm";
             this.Text = "Афинный шифр";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.RichTextBox in_richTextBox;
         private System.Windows.Forms.Button encrypt_button;
         private System.Windows.Forms.RichTextBox out_richTextBox;
         private System.Windows.Forms.Button decrypt_button;
@@ -178,6 +216,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button clear_button;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.RichTextBox in_richTextBox;
     }
 }
 
