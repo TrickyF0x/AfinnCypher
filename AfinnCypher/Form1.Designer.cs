@@ -219,7 +219,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
-        public System.Windows.Forms.RichTextBox in_richTextBox;
+        private System.Windows.Forms.RichTextBox in_richTextBox;
     }
 }
 

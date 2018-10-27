@@ -56,7 +56,7 @@ namespace AfinnCypher
 
             out_richTextBox.Clear();
 
-            text.crypt(comboBox1.SelectedItem.ToString());
+            text.crypt(Int32.Parse(textBox_a.Text), Int32.Parse(textBox_b.Text), text.txt, comboBox1.SelectedItem.ToString());
 
             /* if (comboBox1.SelectedItem.ToString() == "English")
              {
@@ -82,36 +82,65 @@ namespace AfinnCypher
                 textBox1.Clear();
             }
         }
-    }
 
-    class language
-    {
-        public string txt;
-        public void crypt(string type)
+
+        class language
         {
-            
-            List<char> charlist = new List<char>();
-            Queue<char> text = new Queue<char>();
-
-            for (int i = 0; i < MainForm.in_richTextBox.TextLength; ++i)
-                text.Enqueue(MainForm.in_richTextBox.Text[i]);
-
-
-
-            string value;
-            if (type == "English")
+            public string txt;
+            public void crypt(int a, int b, string str, string lang)
             {
 
-            }
-            else if (type == "Русский")
-            {
+                List<char> charlist = new List<char>();
+                Queue<char> text = new Queue<char>();
+                
+                for (int i = 0; i < str.Length; ++i)
+                    text.Enqueue(str[i]);
 
-            }
-            else
-            {
+                coded_alphabet(a, b, lang);
 
+                if (lang == "English")
+                {
+
+                }
+                else if (lang == "Русский")
+                {
+
+                }
+                else
+                {
+
+                }
             }
+
+            private char[] coded_alphabet(int a, int b, string lang)
+            {
+                if (lang == "English")
+                {
+                    char[] code = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+
+                    return code;
+                }
+                else if (lang == "Русский")
+                {
+                    char[] code = {'а','б','в','г','д','е','ё','ж','з','и','й','к','л','м','н','о','п','р','с','т','у','ф','х','ц','ч','ш','щ','ъ','ы','ь','э','ю','я'};
+
+                    return code;
+                }
+                else
+                {
+                    char[] code = new char[lang.Length];
+
+                    for (int i = 0; i < lang.Length; ++i)
+                    {
+                        code[i] = lang[i];
+                    }
+
+
+                    return code;
+                }
+            }//coded_alphabet
+
         }
-    }
 
+    }
 }
