@@ -42,6 +42,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label_helper = new System.Windows.Forms.Label();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +51,7 @@
             // 
             this.in_richTextBox.Location = new System.Drawing.Point(10, 155);
             this.in_richTextBox.Name = "in_richTextBox";
-            this.in_richTextBox.Size = new System.Drawing.Size(436, 225);
+            this.in_richTextBox.Size = new System.Drawing.Size(435, 265);
             this.in_richTextBox.TabIndex = 0;
             this.in_richTextBox.Text = "";
             // 
@@ -68,7 +70,7 @@
             this.out_richTextBox.Location = new System.Drawing.Point(578, 155);
             this.out_richTextBox.Name = "out_richTextBox";
             this.out_richTextBox.ReadOnly = true;
-            this.out_richTextBox.Size = new System.Drawing.Size(436, 225);
+            this.out_richTextBox.Size = new System.Drawing.Size(436, 265);
             this.out_richTextBox.TabIndex = 2;
             this.out_richTextBox.Text = "";
             // 
@@ -80,6 +82,7 @@
             this.decrypt_button.TabIndex = 3;
             this.decrypt_button.Text = "Расшифровать";
             this.decrypt_button.UseVisualStyleBackColor = true;
+            this.decrypt_button.Click += new System.EventHandler(this.decrypt_button_Click);
             // 
             // textBox_a
             // 
@@ -137,7 +140,7 @@
             // 
             // clear_button
             // 
-            this.clear_button.Location = new System.Drawing.Point(452, 340);
+            this.clear_button.Location = new System.Drawing.Point(451, 379);
             this.clear_button.Name = "clear_button";
             this.clear_button.Size = new System.Drawing.Size(120, 41);
             this.clear_button.TabIndex = 10;
@@ -147,6 +150,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label_helper);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Location = new System.Drawing.Point(580, 14);
@@ -163,6 +167,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(424, 22);
             this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // comboBox1
             // 
@@ -178,12 +183,33 @@
             this.comboBox1.Text = "English";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // label_helper
+            // 
+            this.label_helper.AutoSize = true;
+            this.label_helper.Location = new System.Drawing.Point(130, 25);
+            this.label_helper.Name = "label_helper";
+            this.label_helper.Size = new System.Drawing.Size(309, 17);
+            this.label_helper.TabIndex = 2;
+            this.label_helper.Text = "Можно взять за \'a\': 1; 3; 5; 7; 9; 11; 15; 17; 19;\r\n";
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "Обычный",
+            "Рекуррентный"});
+            this.checkedListBox1.Location = new System.Drawing.Point(393, 15);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(178, 55);
+            this.checkedListBox1.TabIndex = 12;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AfinnCypher.Properties.Resources.afiny;
-            this.ClientSize = new System.Drawing.Size(1033, 387);
+            this.ClientSize = new System.Drawing.Size(1033, 432);
+            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.clear_button);
             this.Controls.Add(this.label4);
@@ -196,6 +222,7 @@
             this.Controls.Add(this.out_richTextBox);
             this.Controls.Add(this.encrypt_button);
             this.Controls.Add(this.in_richTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "MainForm";
             this.Text = "Афинный шифр";
             this.groupBox1.ResumeLayout(false);
@@ -220,6 +247,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.RichTextBox in_richTextBox;
+        private System.Windows.Forms.Label label_helper;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }
 
