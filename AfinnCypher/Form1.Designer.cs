@@ -40,10 +40,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.clear_button = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label_helper = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label_helper = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox_b2 = new System.Windows.Forms.TextBox();
+            this.textBox_a2 = new System.Windows.Forms.TextBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -160,6 +165,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Алфавит";
             // 
+            // label_helper
+            // 
+            this.label_helper.AutoSize = true;
+            this.label_helper.Location = new System.Drawing.Point(130, 25);
+            this.label_helper.Name = "label_helper";
+            this.label_helper.Size = new System.Drawing.Size(309, 17);
+            this.label_helper.TabIndex = 2;
+            this.label_helper.Text = "Можно взять за \'a\': 1; 3; 5; 7; 9; 11; 15; 17; 19;\r\n";
+            // 
             // textBox1
             // 
             this.textBox1.Enabled = false;
@@ -183,25 +197,68 @@
             this.comboBox1.Text = "English";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // label_helper
+            // label5
             // 
-            this.label_helper.AutoSize = true;
-            this.label_helper.Location = new System.Drawing.Point(130, 25);
-            this.label_helper.Name = "label_helper";
-            this.label_helper.Size = new System.Drawing.Size(309, 17);
-            this.label_helper.TabIndex = 2;
-            this.label_helper.Text = "Можно взять за \'a\': 1; 3; 5; 7; 9; 11; 15; 17; 19;\r\n";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(165, 59);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(24, 17);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "b2";
+            this.label5.Visible = false;
             // 
-            // checkedListBox1
+            // label6
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Обычный",
-            "Рекуррентный"});
-            this.checkedListBox1.Location = new System.Drawing.Point(393, 15);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(178, 55);
-            this.checkedListBox1.TabIndex = 12;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(165, 15);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(24, 17);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "a2";
+            this.label6.Visible = false;
+            // 
+            // textBox_b2
+            // 
+            this.textBox_b2.Location = new System.Drawing.Point(197, 56);
+            this.textBox_b2.Name = "textBox_b2";
+            this.textBox_b2.Size = new System.Drawing.Size(100, 22);
+            this.textBox_b2.TabIndex = 14;
+            this.textBox_b2.Text = "0";
+            this.textBox_b2.Visible = false;
+            this.textBox_b2.TextChanged += new System.EventHandler(this.textBox_b2_TextChanged);
+            // 
+            // textBox_a2
+            // 
+            this.textBox_a2.Location = new System.Drawing.Point(197, 12);
+            this.textBox_a2.Name = "textBox_a2";
+            this.textBox_a2.Size = new System.Drawing.Size(100, 22);
+            this.textBox_a2.TabIndex = 13;
+            this.textBox_a2.Text = "1";
+            this.textBox_a2.Visible = false;
+            this.textBox_a2.TextChanged += new System.EventHandler(this.textBox_a2_TextChanged);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(318, 15);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(92, 21);
+            this.radioButton1.TabIndex = 17;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Обычный";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(318, 59);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(125, 21);
+            this.radioButton2.TabIndex = 18;
+            this.radioButton2.Text = "Рекуррентный";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // MainForm
             // 
@@ -209,7 +266,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AfinnCypher.Properties.Resources.afiny;
             this.ClientSize = new System.Drawing.Size(1033, 432);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textBox_b2);
+            this.Controls.Add(this.textBox_a2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.clear_button);
             this.Controls.Add(this.label4);
@@ -224,7 +286,7 @@
             this.Controls.Add(this.in_richTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "MainForm";
-            this.Text = "Афинный шифр";
+            this.Text = "Аффинный шифр";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -248,7 +310,12 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.RichTextBox in_richTextBox;
         private System.Windows.Forms.Label label_helper;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox_b2;
+        private System.Windows.Forms.TextBox textBox_a2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
     }
 }
 
